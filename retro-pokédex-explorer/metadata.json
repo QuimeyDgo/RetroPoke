@@ -1,0 +1,5 @@
+{
+  "name": "Retro PokéDex Explorer",
+  "description": "Explora los primeros 20 Pokémon de cada generación con un estilo retro clásico de GameBoy.",
+  "requestFramePermissions": []
+}

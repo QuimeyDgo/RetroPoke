@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@theme {
+  --font-retro: "Press Start 2P", system-ui, sans-serif;
+  --color-gb-darkest: #0f380f;
+  --color-gb-dark: #306230;
+  --color-gb-light: #8bac0f;
+  --color-gb-lightest: #9bbc0f;
+}
+
+body {
+  font-family: var(--font-retro);
+  background-color: #8bac0f; /* GameBoy Light Green */
+  color: #0f380f; /* GameBoy Darkest Green */
+  image-rendering: pixelated;
+}
+
+/* Custom scrollbar for retro feel */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #8bac0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #306230;
+  border: 4px solid #8bac0f;
+}
+
+.pixel-border {
+  border: 4px solid #0f380f;
+  box-shadow: 
+    0 -4px #0f380f,
+    0 4px #0f380f,
+    -4px 0 #0f380f,
+    4px 0 #0f380f;
+}
+
+.pixel-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  background: #9bbc0f;
+  border: 4px solid #0f380f;
+  color: #0f380f;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.pixel-button:hover {
+  background: #306230;
+  color: #9bbc0f;
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+}
+
+.pixel-button.active {
+  background: #0f380f;
+  color: #9bbc0f;
+}
+
+.pokemon-card {
+  background: #9bbc0f;
+  transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  background: #8bac0f;
+}
+
+.gb-screen {
+  background-color: #9bbc0f;
+  border: 20px solid #306230;
+  border-radius: 10px 10px 50px 10px;
+  position: relative;
+}
+
+.gb-screen::after {
+  content: "DOT MATRIX WITH STEREO SOUND";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #8bac0f;
+  white-space: nowrap;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+.type-badge {
+  border: 2px solid #0f380f;
+  padding: 2px 6px;
+  font-size: 8px;
+  background: transparent;
+}
